@@ -20,4 +20,18 @@ class BajajAutoRickshaw implements CNGVehicle {
   }
 }
 
+// Adapter Pattern
+class FuelToCNGAdapter implements FuelVehicle {
+  cngVehicle: CNGVehicle;
+
+  constructor(cngInstance: CNGVehicle) {
+    this.cngVehicle = cngInstance;
+  }
+
+  refillFuel(): void {
+    console.log("Want to Run on CNG? Converting.....");
+    this.cngVehicle.refillCNG();
+  }
+}
+
 
