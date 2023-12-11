@@ -1,9 +1,9 @@
 interface FuelVehicle {
-  refillFuel();
+  refillFuel(): void;
 }
 
 interface CNGVehicle {
-  refillCNG();
+  refillCNG(): void;
 }
 
 // Fuel Vehicle Implementation
