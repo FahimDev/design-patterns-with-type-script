@@ -34,4 +34,10 @@ class FuelToCNGAdapter implements FuelVehicle {
   }
 }
 
+let corolla = new Toyota();
+let babyTaxi = new BajajAutoRickshaw();
+let corollaCNGAdapter = new FuelToCNGAdapter(babyTaxi);
 
+corollaCNGAdapter.refillFuel();
+corolla.refillFuel();
+babyTaxi.refillCNG();
