@@ -7,3 +7,8 @@ abstract class Car {
 
     public abstract cost(): number;
 }
+
+abstract class CarOptions extends Car {
+    private decoratedCar!: Car;
+    public abstract getDescription(): string;
+}
