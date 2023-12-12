@@ -46,7 +46,7 @@ class AutoDrive extends CarOptions {
     }
 
     public getDescription(): string {
-        return this.decoratedCar.getDescription() + "Enhanced Auto Driving.";
+        return this.decoratedCar.getDescription() + " Enhanced Auto Driving. ";
     }
 
     public cost(): number {
@@ -61,7 +61,7 @@ class AirSuspension extends CarOptions {
     }
 
     public getDescription(): string {
-        return this.decoratedCar.getDescription() + "Smart Air Suspension";
+        return this.decoratedCar.getDescription() + " Smart Air Suspension ";
     }
 
     public cost(): number {
@@ -76,10 +76,29 @@ class SentryMode extends CarOptions {
     }
 
     public getDescription(): string {
-        return this.decoratedCar.getDescription() + "Sentry Mode Monitoring";
+        return this.decoratedCar.getDescription() + " Sentry Mode Monitoring ";
     }
 
     public cost(): number {
         return this.decoratedCar.cost() + 300;
     }
 }
+
+// ----- Configure Tesla -----
+
+let officeTesla = new ModelS();
+console.log("Office Car Description", officeTesla.getDescription());
+console.log("Office Car Price: ", officeTesla.cost());
+console.log("--------------------");
+let personalTesla = new ModelX();
+console.log("Personal Car Description", personalTesla.getDescription());
+console.log("Personal Car Price: ", personalTesla.cost());
+console.log("----------Customizing----------");
+personalTesla = new AirSuspension(personalTesla);
+console.log("Personal Car Description", personalTesla.getDescription());
+console.log("Personal Car Price: ", personalTesla.cost());
+personalTesla = new SentryMode(personalTesla);
+personalTesla = new AutoDrive(personalTesla);
+console.log("----------Customizing----------");
+console.log("Personal Car Description", personalTesla.getDescription());
+console.log("Personal Car Price: ", personalTesla.cost());
