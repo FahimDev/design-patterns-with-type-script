@@ -42,3 +42,20 @@ class AutomobileFactory {
   }
 }
 
+const factory = new AutomobileFactory();
+const toyotaCorolla = factory.createAutomobile("sedan");
+
+if (toyotaCorolla) {
+  toyotaCorolla.start();
+  toyotaCorolla.stop();
+}
+
+const toyotaHilux = factory.createAutomobile("suv");
+
+if (toyotaHilux) {
+  toyotaHilux.start();
+  toyotaHilux.stop();
+}
+
+// This will log an error message.
+const invalidAutomobile = factory.createAutomobile('bike');
