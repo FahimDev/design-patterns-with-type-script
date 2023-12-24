@@ -24,3 +24,21 @@ class SUV implements IAutomobile {
   }
 }
 
+// Concrete class for Automobile Factory
+class AutomobileFactory {
+  private automobileTypes: { [key: string]: new () => IAutomobile } = {
+    sedan: Sedan,
+    suv: SUV,
+  };
+
+  createAutomobile(vehicleType: string): IAutomobile | null {
+    const AutoMobileClass = this.automobileTypes[vehicleType.toLowerCase()];
+    if (AutoMobileClass) {
+      return new AutoMobileClass();
+    } else {
+      console.log("Automobile Type Unknown.");
+      return null;
+    }
+  }
+}
+
