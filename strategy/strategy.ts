@@ -17,4 +17,9 @@ class HttpCommunicationStrategy implements CommunicationStrategy {
   }
 }
 
-
+// Concrete implementation of a communication strategy using WebSocket (WSS) protocol
+class WssCommunicationStrategy implements CommunicationStrategy {
+  send(data: string): void {
+    console.log(`Sending data via WSS: ${data}`);
+  }
+}
