@@ -23,3 +23,22 @@ class WssCommunicationStrategy implements CommunicationStrategy {
     console.log(`Sending data via WSS: ${data}`);
   }
 }
+
+// CONTEXT class representing an IoT device
+class IoTDevice {
+  private communicationStrategy: CommunicationStrategy;
+
+  constructor(communicationStrategy: CommunicationStrategy) {
+    this.communicationStrategy = communicationStrategy;
+  }
+
+  // Set a new communication strategy at runtime
+  setCommunicationStrategy(communicationStrategy: CommunicationStrategy) {
+    this.communicationStrategy = communicationStrategy;
+  }
+
+  // Send data using the current communication strategy
+  sendData(data: string) {
+    this.communicationStrategy.send(data);
+  }
+}
