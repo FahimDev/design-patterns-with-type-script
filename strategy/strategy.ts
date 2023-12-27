@@ -1,25 +1,25 @@
 // Define a strategy interface for communication
 interface CommunicationStrategy {
-  send(data: string): void;
+  send(data: any): void;
 }
 
 // Concrete implementation of a communication strategy using MQTT protocol
 class MqttCommunicationStrategy implements CommunicationStrategy {
-  send(data: string): void {
+  send(data: any): void {
     console.log(`Sending data via MQTT: ${data}`);
   }
 }
 
 // Concrete implementation of a communication strategy using HTTP protocol
 class HttpCommunicationStrategy implements CommunicationStrategy {
-  send(data: string): void {
+  send(data: any): void {
     console.log(`Sending data via HTTP: ${data}`);
   }
 }
 
 // Concrete implementation of a communication strategy using WebSocket (WSS) protocol
 class WssCommunicationStrategy implements CommunicationStrategy {
-  send(data: string): void {
+  send(data: any): void {
     console.log(`Sending data via WSS: ${data}`);
   }
 }
@@ -38,7 +38,7 @@ class IoTDevice {
   }
 
   // Send data using the current communication strategy
-  sendData(data: string) {
+  sendData(data: any) {
     this.communicationStrategy.send(data);
   }
 }
